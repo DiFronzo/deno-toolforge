@@ -26,9 +26,10 @@ function App() {
       <title>Deno Toolforge</title>
       <header className="border-b border-gray-200 py-3">
         <div className="container px-2 max-w-2xl mx-auto flex items-center justify-between">
-          <h1 className="text-3xl flex items-center">
-            <img className="w-12 h-12" src={logo} alt={"logo"} />&nbsp; Deno Toolforge
-          </h1>
+          <a className="flex items-center" href="/"><img src={logo} alt="" className="h-10 w-auto sm:h-12 my-2"/>
+            <div className="font-bold text-gray-900 leading-tight text-2xl sm:text-3xl tracking-tight">&nbsp;Deno</div>
+            <div className="font-normal text-xl sm:text-3xl tracking-tight">&nbsp;Toolforge</div>
+          </a>
           <div>
             <a
               href="https://github.com/DiFronzo/deno-toolforge"
@@ -54,11 +55,11 @@ function App() {
       </header>
       <div className="container px-2 max-w-2xl mx-auto">
         <div className="my-5 text-xl">
-          To use GitHub or Deno.Land as a package registry for Deno, you only need to replace{' '}
+          To use GitHub as a package registry for Deno, you only need to replace{' '}
           <code className="text-sm bg-gray-200 rounded p-1">github.com</code>{' '}
-          {' '}or{' '}
-          <code className="text-sm bg-gray-200 rounded p-1">deno.land</code>{' '}
-          with{' '}
+          {' '}
+          with
+          {' '}
           <code className="text-sm bg-gray-200 rounded p-1">deno.toolforge.org</code>{' '}
           like this:
         </div>
@@ -67,14 +68,15 @@ function App() {
             deno.toolforge.org
           </Span>
           /<Span bg="bg-black">user</Span>/
-          <Span bg="bg-black">repo or repo@tag</Span>/
+          <Span bg="bg-black">repo</Span>/
+          <Span bg="bg-black">branches or tags</Span>/
           <Span bg="bg-black">path/to/file</Span>
         </div>
         <div className="my-5 text-xl">Example:</div>
         <div className="my-5">
           <pre className="bg-black rounded-lg text-gray-200 overflow-auto">
             <code>{`
-  import { opn } from 'https://deno.toolforge.org/hashrock/deno-opn/opn.ts'
+  import { opn } from 'https://deno.toolforge.org/hashrock/deno-opn/master/opn.ts'
 
   opn('https://deno.toolforge.org')
   `}</code>

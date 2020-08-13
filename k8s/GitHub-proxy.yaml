@@ -1,0 +1,36 @@
+---
+# Service object for routing requests to raw.githubusercontent.com
+apiVersion: v1
+kind: Service
+metadata:
+  name: github
+  namespace: tool-deno
+spec:
+  type: ExternalName
+  externalName: raw.githubusercontent.com
+...
+---
+# Ingress object for routing requests to raw.githubusercontent.com
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: proxy-github
+  namespace: tool-deno
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1$2
+    nginx.ingress.kubernetes.io/upstream-vhost: raw.githubusercontent.com
+    nginx.ingress.kubernetes.io/backend-protocol: https
+    nginx.ingress.kubernetes.io/server-snippet: |
+      proxy_ssl_name raw.githubusercontent.com;
+      proxy_ssl_server_name on;
+spec:
+  rules:
+    - host: deno.toolforge.org
+      http:
+        paths:
+          - backend:
+              serviceName: github
+              servicePort: 443
+            path: /([a-zA-Z0-9])(.*)
+...
