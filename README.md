@@ -1,5 +1,7 @@
 <!-- markdownlint-disable MD041 -->
 
+<img src="https://github.com/DiFronzo/deno-toolforge/blob/master/src/img/Wikimedia_Deno_Logo.svg" width="150px" height="150px" alt="some_text">
+
 # [Deno.toolforge.org](https://deno.toolforge.org)
 
 You wanna use a third-party library which is stored on GitHub and Deno.Land in [Deno](https://deno.land)?
