@@ -55,9 +55,12 @@ function App() {
       </header>
       <div className="container px-2 max-w-2xl mx-auto">
         <div className="my-5 text-xl">
-          To use GitHub as a package registry for Deno, you only need to replace{' '}
+          To use GitHub or Deno.Land as a package registry for Deno, you only need to replace{' '}
           <code className="text-sm bg-gray-200 rounded p-1">github.com</code>{' '}
           {' '}
+          or
+          {' '}
+          <code className="text-sm bg-gray-200 rounded p-1">deno.land</code>{' '}
           with
           {' '}
           <code className="text-sm bg-gray-200 rounded p-1">deno.toolforge.org</code>{' '}
@@ -66,17 +69,18 @@ function App() {
         <div className="my-5 text-gray-400">
           <Span leading bg="bg-green-500">
             deno.toolforge.org
-          </Span>
-          /<Span bg="bg-black">user</Span>/
+          </Span>/
+          <Span bg="bg-black">github or deno</Span>/
+          <Span bg="bg-black">user or x</Span>/
           <Span bg="bg-black">repo</Span>/
-          <Span bg="bg-black">branches or tags</Span>/
+          <Span bg="bg-black">branche</Span>/
           <Span bg="bg-black">path/to/file</Span>
         </div>
         <div className="my-5 text-xl">Example:</div>
         <div className="my-5">
           <pre className="bg-black rounded-lg text-gray-200 overflow-auto">
             <code>{`
-  import { opn } from 'https://deno.toolforge.org/hashrock/deno-opn/master/opn.ts'
+  import { opn } from 'https://deno.toolforge.org/github/hashrock/deno-opn/master/opn.ts'
 
   opn('https://deno.toolforge.org')
   `}</code>

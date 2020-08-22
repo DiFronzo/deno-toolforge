@@ -1,4 +1,6 @@
-<img src="https://github.com/DiFronzo/deno-toolforge/blob/master/src/img/Wikimedia_Deno_Logo.svg" width="150px" height="150px" alt="some_text">
+<!-- markdownlint-disable MD041 -->
+
+<!--![denopkg](./src/img/Wikimedia_Deno_Logo.svg| width=48)-->
 
 # [Deno.toolforge.org](https://deno.toolforge.org)
 
