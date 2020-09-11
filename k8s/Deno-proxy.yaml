@@ -7,7 +7,7 @@ metadata:
   namespace: tool-deno
 spec:
   type: ExternalName
-  externalName: deno.land
+  externalName: cdn.deno.land
 ...
 ---
 # Ingress object for routing requests to deno.land
@@ -19,10 +19,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-    nginx.ingress.kubernetes.io/upstream-vhost: deno.land
+    nginx.ingress.kubernetes.io/upstream-vhost: cdn.deno.land
     nginx.ingress.kubernetes.io/backend-protocol: https
     nginx.ingress.kubernetes.io/server-snippet: |
-      proxy_ssl_name deno.land;
+      proxy_ssl_name cdn.deno.land;
       proxy_ssl_server_name on;
 spec:
   rules:
